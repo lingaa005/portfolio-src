@@ -1,0 +1,278 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500;600&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Cormorant Garamond", Georgia, serif;
+  --font-display: "Cinzel", serif;
+  --font-sans: "Inter", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+  
+  --color-gold-50: #fdfaf2;
+  --color-gold-100: #f7eecf;
+  --color-gold-200: #eedda0;
+  --color-gold-300: #e0be69;
+  --color-gold-400: #cca043;
+  --color-gold-500: #b8860b;
+  --color-gold-600: #9c6c1f;
+  --color-gold-700: #7d5218;
+  --color-gold-800: #2a2218;
+  --color-gold-900: #1a1a1a;
+  
+  --color-parchment-light: #ebdcc4;
+  --color-parchment-base: #e8dcc4;
+  --color-parchment-dark: #ccb99b;
+  --color-archive-dark: #0d0d0d;
+  --color-desk-wood: #1a1a1a;
+
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-subtle-spin: subtle-spin 12s linear infinite;
+  --animate-seal-pulse: seal-pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-8px) rotate(0.5deg); }
+}
+
+@keyframes subtle-spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes seal-pulse {
+  0%, 100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(184, 134, 43, 0.4); }
+  50% { transform: scale(1.02); box-shadow: 0 0 15px 4px rgba(184, 134, 43, 0.6); }
+}
+
+/* Custom Utilities for the Manuscript Portfolio */
+
+/* Scribes' custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #0d0d0d;
+}
+::-webkit-scrollbar-thumb {
+  background: #2a2218;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #b8860b;
+}
+
+/* Realistic parchment fiber texture */
+.parchment-texture {
+  background-color: var(--color-parchment-base);
+  background-image: 
+    radial-gradient(circle at 10% 20%, rgba(220, 205, 175, 0.1) 0%, transparent 40%),
+    radial-gradient(circle at 80% 70%, rgba(210, 190, 160, 0.15) 0%, transparent 50%),
+    url('https://www.transparenttextures.com/patterns/natural-paper.png');
+  box-shadow: 
+    inset 0 0 35px rgba(42, 34, 24, 0.11),
+    0 15px 35px rgba(0, 0, 0, 0.65);
+}
+
+.parchment-texture-dark {
+  background-color: #1a1a1a;
+  background-image: 
+    radial-gradient(circle at 10% 20%, rgba(40, 30, 20, 0.4) 0%, transparent 40%),
+    radial-gradient(circle at 80% 70%, rgba(35, 25, 18, 0.4) 0%, transparent 50%),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.05' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.12 0'/%3E%3C/filter%3E%3Crect width='120' height='120' filter='url(%23noise)' opacity='0.4'/%3E%3C/svg%3E");
+  box-shadow: 
+    inset 0 0 30px rgba(0, 0, 0, 0.7),
+    0 10px 25px rgba(0, 0, 0, 0.6);
+}
+
+/* Desk Wood Texture */
+.desk-background {
+  background-color: #0d0d0d;
+  background-image: 
+    radial-gradient(circle at 50% 50%, #2a2218 0%, #0d0d0d 100%),
+    url('data:image/svg+xml,%3Csvg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"%3E%3Cfilter id="noiseFilter"%3E%3CfeTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch"/%3E%3C/filter%3E%3Crect width="100%25" height="100%25" filter="url(%23noiseFilter)"/%3E%3C/svg%3E');
+}
+
+/* Blueprint / Grid alignment pattern */
+.grid-blueprint {
+  background-size: 32px 32px;
+  background-image: 
+    linear-gradient(to right, rgba(184, 134, 43, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(184, 134, 43, 0.04) 1px, transparent 1px);
+}
+
+/* Vintage calligraphy ink effect */
+.ink-writing {
+  color: #2b221a;
+  text-shadow: 0.5px 0.5px 1px rgba(43, 34, 26, 0.4);
+}
+
+/* Handpressed seal stamp background */
+.wax-seal-bg {
+  background: radial-gradient(circle at 35% 35%, #bf2626 0%, #801010 60%, #4a0505 100%);
+  box-shadow: 
+    inset -2px -2px 6px rgba(0, 0, 0, 0.4),
+    inset 2px 2px 5px rgba(255, 255, 255, 0.45),
+    0 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+/* Engraved metal plating (Brass controls) */
+.brass-button {
+  background: linear-gradient(135deg, #f7eecf 0%, #b8862b 50%, #623f14 100%);
+  border: 1px solid #cca043;
+  box-shadow: 
+    inset 0 1px 0 rgba(255, 255, 255, 0.4),
+    0 4px 6px rgba(0, 0, 0, 0.35),
+    0 1px 2px rgba(0, 0, 0, 0.2);
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.8);
+}
+
+.brass-button:hover {
+  background: linear-gradient(135deg, #ffffff 0%, #cca043 45%, #7d5218 100%);
+  box-shadow: 
+    inset 0 1px 0 rgba(255, 255, 255, 0.6),
+    0 6px 12px rgba(184, 134, 43, 0.3),
+    0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.brass-border {
+  border-image: linear-gradient(to right, #623f14, #eedda0, #b8862b, #623f14) 1;
+}
+
+/* Vintage architectural line */
+.architect-line {
+  position: relative;
+}
+.architect-line::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--color-gold-500), transparent);
+}
+
+/* Microscopic page line */
+.ruled-page {
+  background-size: 100% 27px;
+  background-image: linear-gradient(rgba(184, 134, 43, 0.08) 1px, transparent 1px);
+}
+
+/* HIGH-FIDELITY A4 PRINT / PDF RESUME STYLING */
+@media print {
+  /* Ensure parent containers lose their dark backgrounds, bounds, and heights so printing works seamlessly */
+  #root,
+  #root > div {
+    background: #ffffff !important;
+    background-image: none !important;
+    min-height: auto !important;
+    height: auto !important;
+    overflow: visible !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    position: static !important;
+    display: block !important;
+  }
+
+  /* Hide all main website content sections, headers, sidebars, progress gauges and non-resume items entirely */
+  header,
+  aside,
+  main,
+  footer,
+  .fixed:not(#resume-ledger-modal),
+  .sticky,
+  .particles-container,
+  [class*="particles"] {
+    display: none !important;
+  }
+
+  /* Style body as white document canvas with default A4 margins */
+  body {
+    background-color: #ffffff !important;
+    background-image: none !important;
+    color: #000000 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    height: auto !important;
+    overflow: visible !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  /* Stabilize the outer modal box so it does not render as a floating preview with a backdrop */
+  #resume-ledger-modal {
+    position: static !important;
+    display: block !important;
+    background: #ffffff !important;
+    background-image: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    overflow: visible !important;
+    height: auto !important;
+    width: 100% !important;
+    min-height: auto !important;
+    inset: auto !important;
+    z-index: auto !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+  }
+
+  /* Remove all shadows, rounded borders and frame styling on the printable box container */
+  #resume-ledger-modal > div {
+    border: none !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    max-height: none !important;
+    max-width: 100% !important;
+    width: 100% !important;
+    overflow: visible !important;
+    position: static !important;
+    background: #ffffff !important;
+    background-image: none !important;
+    transform: none !important;
+  }
+
+  /* Hide print utility bars and standard close icons */
+  .print\:hidden,
+  .print-hidden,
+  [class*="print:hidden"] {
+    display: none !important;
+  }
+
+  /* Force standard A4 portrait dimension and optimized default printable margins */
+  @page {
+    size: A4 portrait;
+    margin: 15mm 15mm 15mm 15mm;
+  }
+
+  /* Elegant spacing margins on content blocks */
+  .space-y-6 > * {
+    margin-top: 1.25rem !important;
+    margin-bottom: 1.25rem !important;
+    page-break-inside: avoid !important;
+  }
+
+  /* Prevent awkward page-cut breaks inside experience items and education lists */
+  .space-y-4 > div, 
+  .space-y-3 > div, 
+  .space-y-2 > div,
+  ul, 
+  li {
+    page-break-inside: avoid !important;
+  }
+
+  /* Re-align margins and borders using sharp black contrast for standard office physical printout */
+  .border-stone-900 {
+    border-color: #000000 !important;
+    border-bottom-width: 1.5px !important;
+  }
+
+  /* Force robust default system typography rendering to bypass high-DPI rendering blurs, keeping everything sharp */
+  h2, h3, h4, p, li, span, a {
+    color: #000000 !important;
+    font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !important;
+  }
+}
+

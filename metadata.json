@@ -1,0 +1,6 @@
+{
+  "name": "Kasilingam .M Portfolio",
+  "description": "Interactive portfolio and engineering archive of Kasilingam .M, Software Engineer, Backend Developer, and System Architect, presented as an immersive historical manuscript.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
